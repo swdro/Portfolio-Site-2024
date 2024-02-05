@@ -6,6 +6,7 @@
     --intro-padding-x: 16rem;
 }
 
+
 html {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -37,27 +38,16 @@ body {
 .nav-links {
     display: flex;
     gap: 2.75rem;
-}
-
-.socials-list {
-    width: fit-content;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.socials-list a {
-    display: flex;
     align-items: center;
 }
 
-.socials-list svg {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.contact {
+.nav-links a {
     all: unset;
     cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: var(--dark-grey);
 }
 
 .intro-section {
@@ -115,6 +105,7 @@ section, footer {
 
 .experience-item {
     display: grid;
+    column-gap: 1rem;
     grid-template-columns: 50% 50%;
     justify-content: space-between;
     align-items: start;
@@ -201,4 +192,136 @@ section, footer {
     visibility: visible;
     opacity: 1;
 }
-  
+
+footer {
+    display: relative;
+    padding: var(--intro-padding-x);
+}
+
+.contact-heading {
+    margin: auto;
+    width: fit-content;
+    font-family: TT interphases pro, Arial, sans-serif;;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3.3rem;
+    margin-bottom: 1rem;
+}
+
+.socials-list {
+    margin: auto;
+    width: fit-content;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.socials-list a {
+    display: flex;
+    align-items: center;
+}
+
+.socials-list svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.socials-list svg:hover {
+    fill: var(--dark-grey);
+}
+
+@media all and (max-width: 975px) {
+    :root {
+        --intro-padding-x: 8rem; 
+        --nav-padding-x: 3rem;
+    }
+
+    .intro-heading, 
+    .experience-list
+    {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin: 0;
+    }
+
+    .intro-heading
+    {
+        font-size: 2rem;
+        line-height: 2.3rem;
+    }
+
+    .contact-heading {
+        font-size: 1.5rem;
+    }
+
+    .intro-subheading {
+        visibility: hidden;
+    }
+}
+
+@media all and (max-width: 900px) {
+
+    .project-item-img-description {
+        font-size: 0.8rem;
+        padding: 1.5rem;
+    }
+}
+
+@media all and (max-width: 650px) {
+    :root {
+        --intro-padding-x: 8rem; 
+        --nav-padding-x: 3rem;
+    }
+
+    .name, .nav-links a {
+        font-size: 1rem;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr; 
+    }
+
+    .project-item-img {
+        height: 18rem;
+    }
+
+    .project-item-img-description {
+        font-size: 1.2rem;
+    }
+
+    .project-item-img-description h1 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media all and (max-width: 475px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .name, .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .intro-heading {
+        padding-top: 5rem;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+    }
+
+    .experience-list {
+        padding: 2rem 0;
+    }
+
+    .experience-item {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .project-item-img-description {
+        font-size: 0.8rem;
+    }
+}
