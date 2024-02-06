@@ -11,6 +11,7 @@ html {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -52,6 +53,8 @@ body {
 
 .intro-section {
     padding: 0 var(--nav-padding-x);
+    height: 100vh;
+    position: relative;
 }
 
 .intro-subheading {
@@ -64,15 +67,24 @@ body {
     z-index: 1000;
 }
 
+.intro-heading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
 .intro-heading {
-    padding: var(--intro-padding-x);
-    padding-top: 16rem;
-    padding-bottom: 16rem;
+    margin: auto;
     max-width: 528px;
     font-family: TT interphases pro, Arial, sans-serif;;
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 3.3rem;
+    text-align: center;
 }
 
 section, footer {
@@ -105,9 +117,8 @@ section, footer {
 
 .experience-item {
     display: grid;
-    column-gap: 1rem;
-    grid-template-columns: 50% 50%;
-    justify-content: space-between;
+    column-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
     align-items: start;
 }
 
@@ -116,7 +127,7 @@ section, footer {
 }
 
 .experience-item-date {
-    display: grid;
+    text-align: right;
 }
 
 .experience-item-location {
@@ -229,18 +240,32 @@ footer {
     fill: var(--dark-grey);
 }
 
+@media all and (min-width: 2048px) and (min-height: 1080px) {
+    html {
+        font-size: 24px;
+    }
+
+    .intro-heading {
+        max-width: 750px;
+    }
+}
+
+@media all and (min-width: 1500px) { 
+    .project-item-img {
+        height: 36rem;
+    }
+}
+
+@media all and (min-width: 2800px) { 
+    .project-item-img {
+        height: 56rem;
+    }
+}
+
 @media all and (max-width: 975px) {
     :root {
         --intro-padding-x: 8rem; 
         --nav-padding-x: 3rem;
-    }
-
-    .intro-heading, 
-    .experience-list
-    {
-        padding-left: 3rem;
-        padding-right: 3rem;
-        margin: 0;
     }
 
     .intro-heading
@@ -276,6 +301,10 @@ footer {
         font-size: 1rem;
     }
 
+    .intro-heading {
+        padding: 0 4rem;
+    }
+
     .project-list {
         grid-template-columns: 1fr; 
     }
@@ -303,7 +332,6 @@ footer {
     }
 
     .intro-heading {
-        padding-top: 5rem;
         font-size: 1.5rem;
         line-height: 1.7rem;
     }
